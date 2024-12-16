@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación Firebase</title>
+    <!-- Asegúrate de que esta ruta sea correcta -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container">
+        <h2>Registrarse</h2>
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="email" id="email" placeholder="Correo electrónico" />
+        <input type="password" id="contrasena" placeholder="Contraseña" />
+        <button id="registrar-btn">Registrar</button>
+        <h2>Iniciar sesión</h2>
+        <input type="email" id="login-email" placeholder="Correo electrónico" />
+        <input type="password" id="login-contrasena" placeholder="Contraseña" />
+        <button id="login-btn">Iniciar sesión</button>
+    </div>
+
+    <div id="user-info" style="display: none;">
+        <h2>Bienvenido, <span id="user-name"></span></h2>
+        <button id="logout-btn">Cerrar sesión</button>
+    </div>
+
+    <div id="mensaje" style="display: none;"></div>
+
+    <!-- Incluye type="module" para usar ES6 Modules -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

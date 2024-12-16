@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autenticación Firebase</title>
-    <!-- Asegúrate de que esta ruta sea correcta -->
+    <title>Diabetes Remaster</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Contenedor de autenticación -->
     <div id="auth-container">
-        <h2>Registrarse</h2>
-        <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="email" id="email" placeholder="Correo electrónico" />
-        <input type="password" id="contrasena" placeholder="Contraseña" />
+        <h2>Registro</h2>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="password" id="contrasena" placeholder="Contraseña" required>
         <button id="registrar-btn">Registrar</button>
+
         <h2>Iniciar sesión</h2>
-        <input type="email" id="login-email" placeholder="Correo electrónico" />
-        <input type="password" id="login-contrasena" placeholder="Contraseña" />
+        <input type="email" id="login-email" placeholder="Correo electrónico" required>
+        <input type="password" id="login-contrasena" placeholder="Contraseña" required>
         <button id="login-btn">Iniciar sesión</button>
     </div>
 
+    <!-- Mensajes de éxito o error -->
+    <div id="mensaje" style="display: none;"></div>
+
+    <!-- Información del usuario -->
     <div id="user-info" style="display: none;">
-        <h2>Bienvenido, <span id="user-name"></span></h2>
+        <h2>Bienvenido</h2>
+        <p>Hola, <span id="user-name"></span>!</p>
         <button id="logout-btn">Cerrar sesión</button>
     </div>
 
-    <div id="mensaje" style="display: none;"></div>
+    <!-- Firebase SDK (CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 
-    <!-- Incluye type="module" para usar ES6 Modules -->
-    <script type="module" src="app.js"></script>
+    <!-- Tu archivo JS donde está la lógica -->
+    <script src="app.js"></script>
 </body>
 </html>

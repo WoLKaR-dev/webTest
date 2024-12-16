@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diabetes Remaster</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <!-- Contenedor de autenticación -->
-    <div id="auth-container">
-        <h2>Registro</h2>
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="email" id="email" placeholder="Correo electrónico" required>
-        <input type="password" id="contrasena" placeholder="Contraseña" required>
-        <button id="registrar-btn">Registrar</button>
+    <section class="sectionGeneral">
 
-        <h2>Iniciar sesión</h2>
-        <input type="email" id="login-email" placeholder="Correo electrónico" required>
-        <input type="password" id="login-contrasena" placeholder="Contraseña" required>
-        <button id="login-btn">Iniciar sesión</button>
-    </div>
+        <h1>Bienvenido de nuevo</h1>
 
-    <!-- Mensajes de éxito o error -->
-    <div id="mensaje" style="display: none;"></div>
+        <div class="grid-container">
 
-    <!-- Información del usuario -->
-    <div id="user-info" style="display: none;">
-        <h2>Bienvenido</h2>
-        <p>Hola, <span id="user-name"></span>!</p>
-        <button id="logout-btn">Cerrar sesión</button>
-    </div>
+            <div class="grid-item-left">
+                <img src="healthDiabetes.jpeg" class="bigImg">
+                <p>Calcula tus raciones en base a los hidratos de carbono</p>
+            </div>
 
-    <!-- Firebase SDK (Importando como módulos ES6) -->
-    <script type="module" src="app.js"></script>
+            <div class="grid-item-right">
+                <div class="sub-item"><p>hola</p></div>
+                <div class="sub-item"><p>hola</p></div>
+
+            </div>
+            
+
+        </div>
+
+    </section>
 </body>
 </html>

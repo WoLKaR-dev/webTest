@@ -1,0 +1,129 @@
+/* Fuentes */
+@font-face {
+    font-family: 'MontserratBold';
+    src: url(fonts/Montserrat-SemiBold.ttf);
+}
+
+/* Estilos generales para pantallas pequeñas */
+@media (max-width: 768px) {
+    .grid-container {
+        align-items: center; /* Centra los elementos */
+    }
+
+    .grid-item-left, .grid-item-right {
+        width: 90%; /* Aumenta el ancho para ocupar más espacio */
+        margin: 0; /* Elimina márgenes laterales */
+    }
+
+    .grid-item-right {
+        margin-top: 20px; /* Agrega un margen superior para separación */
+    }
+
+    .grid-item-left p, .grid-item-right p {
+        font-size: 1.2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    }
+
+    .grid-item-right .sub-item {
+        margin: 2%; /* Reduce el margen interno para que quepan mejor */
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .grid-item-left, .grid-item-right {
+        width: 95%; /* Aumenta el ancho para ocupar casi todo el espacio */
+    }
+
+    .grid-item-left p, .grid-item-right p {
+        font-size: 1rem; /* Ajusta aún más el tamaño de fuente */
+    }
+}
+
+/* Datos generales de la página */
+
+html, body {
+    height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina el margen por defecto del body */
+}
+
+body {
+    background: linear-gradient(to bottom, #0c101d, #222d4d);
+    background-repeat: no-repeat; /* Asegura que no se repita */
+    background-size: cover; /* Asegura que cubra toda la pantalla */
+}
+
+
+.sectionGeneral, h1{
+    margin: 60px;
+    font-family: 'MontserratBold';
+    color: #f2ddcc;
+    font-size: 35px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.sectionGeneral{
+    justify-content: center;
+}
+
+.grid-container {
+    justify-content: center;
+    display: flex; 
+    gap: 20px; /* Espacio entre columnas */
+    align-items: stretch; 
+}
+
+.grid-item-left {
+    aspect-ratio: 1/1; /* Mantiene la relación de aspecto cuadrada */
+    width: 20%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f2ddcc; 
+    font-family: 'MontserratBold'; 
+    text-align: left; 
+    border-radius: 50px;
+    height: auto; /* Ajusta automáticamente según el contenido */
+}
+
+.grid-item-right {
+    width: 20%; 
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f2ddcc; 
+    font-family: 'MontserratBold'; 
+    text-align: left; 
+    border-radius: 50px;
+    height: auto; /* Ajusta automáticamente según el contenido */
+}
+
+.grid-item-right .sub-item {
+    flex: 1; /* Permite que ambos sub-elementos ocupen el mismo espacio */
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro de cada sub-elemento */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin: 5%; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.2); /* Color de fondo para distinguir */
+    border-radius: 30px; /* Bordes redondeados */
+}
+
+.grid-item-left p, .grid-item-right p {
+    margin: 5%;
+    font-size: 1.5rem;
+    max-width: 90%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: normal;
+}
+
+.bigImg {
+    margin-top: 2%;
+    width: 95%;
+    align-self: center;
+    aspect-ratio: 1 / 0,5625; 
+    background-color: #3498db; 
+    border-radius: 40px;
+}

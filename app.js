@@ -1,4 +1,9 @@
-// Inicializa Firebase
+// Importar funciones necesarias de Firebase
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
+
+// Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDdYr1kYDKRAESAlSg1k5iDw6wu5xCpDmw",
     authDomain: "diabetesassistance-a6047.firebaseapp.com",
@@ -10,10 +15,10 @@ const firebaseConfig = {
     measurementId: "G-Q4G16WPH4Q"
 };
 
-// Inicializa Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.getAuth(app);
-const database = firebase.getDatabase(app);
+// Inicializar Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
 
 // Función para mostrar mensajes al usuario
 function mostrarMensaje(mensaje) {
@@ -28,11 +33,11 @@ document.getElementById('registrar-btn').addEventListener('click', function() {
     const email = document.getElementById('email').value;
     const contrasena = document.getElementById('contrasena').value;
 
-    firebase.createUserWithEmailAndPassword(auth, email, contrasena)
+    createUserWithEmailAndPassword(auth, email, contrasena)
         .then((userCredential) => {
             const user = userCredential.user;
             // Guardar datos en Realtime Database
-            firebase.set(firebase.ref(database, 'usuarios/' + user.uid), {
+            set(ref(database, 'usuarios/' + user.uid), {
                 nombre: nombre,
                 email: email
             });
@@ -51,7 +56,7 @@ document.getElementById('login-btn').addEventListener('click', function() {
     const email = document.getElementById('login-email').value;
     const contrasena = document.getElementById('login-contrasena').value;
 
-    firebase.signInWithEmailAndPassword(auth, email, contrasena)
+    signInWithEmailAndPassword(auth, email, contrasena)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log("Usuario iniciado sesión:", user.uid);
@@ -73,7 +78,7 @@ function mostrarUsuario(nombre) {
 
 // Función para cerrar sesión
 document.getElementById('logout-btn').addEventListener('click', function() {
-    firebase.signOut(auth).then(() => {
+    signOut(auth).then(() => {
         console.log("Usuario cerrado sesión");
         mostrarMensaje('Cerraste sesión exitosamente.');
         document.getElementById('auth-container').style.display = 'block';
@@ -82,7 +87,7 @@ document.getElementById('logout-btn').addEventListener('click', function() {
 });
 
 // Escuchar cambios en el estado de autenticación
-firebase.onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, (user) => {
     if (user) {
         mostrarUsuario(user.displayName || user.email);
         mostrarMensaje('Ya estás registrado e iniciado sesión.');

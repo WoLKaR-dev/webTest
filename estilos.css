@@ -5,8 +5,6 @@
 }
 
 /* Estilos generales para pantallas pequeñas */
-/* Estilos generales para pantallas pequeñas */
-
 /* Datos generales de la página */
 
 html, body {
@@ -20,9 +18,9 @@ body {
     background-size: cover; /* Asegura que cubra toda la pantalla */
 }
 
-
 .sectionGeneral, h1{
     margin: 60px;
+    margin-bottom: 20px;
     font-family: 'MontserratBold';
     color: #f2ddcc;
     font-size: 35px;
@@ -56,6 +54,7 @@ body {
     text-align: left; 
     border-radius: 50px;
     height: auto; /* Ajusta automáticamente según el contenido */
+    min-height: 0; /* Permite que el contenido se expanda */
 }
 
 .grid-item-right {
@@ -69,6 +68,7 @@ body {
     text-align: left; 
     border-radius: 50px;
     height: auto; /* Ajusta automáticamente según el contenido */
+    min-height: 0; /* Permite que el contenido se expanda */
 }
 
 .grid-item-right .sub-item {
@@ -83,11 +83,13 @@ body {
 
 .grid-item-left p, .grid-item-right p {
     margin: 5%;
-    font-size: 1.5rem;
+    font-size: 1.5vw; /* Ajuste dinámico basado en el tamaño de la ventana */
+    line-height: 1.4; /* Mejorar la legibilidad */
     max-width: 90%; 
     overflow: hidden;
     text-overflow: ellipsis; 
     white-space: normal;
+    flex-grow: 1; /* Permite que el párrafo se expanda según la altura disponible */
 }
 
 .bigImg {
@@ -106,14 +108,13 @@ body {
         gap: 10px;
     }
 
-    
     .grid-item-left, .grid-item-right {
         width: 45%; 
-        border-radius: 20px;
+        border-radius: 30px;
     }
 
     .grid-item-left p, .grid-item-right p {
-        font-size: 2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+        font-size: 3vw; /* Ajuste más pequeño para pantallas pequeñas */
     }
 
     .grid-item-right .sub-item {
@@ -121,6 +122,6 @@ body {
     }
 
     .bigImg {
-        border-radius: 20px;
+        border-radius: 30px;
     }
 }

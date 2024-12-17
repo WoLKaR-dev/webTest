@@ -124,14 +124,3 @@ body {
         border-radius: 20px;
     }
 }
-
-/* Estilos para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .grid-item-left, .grid-item-right {
-        width: 95%; /* Aumenta el ancho para ocupar casi todo el espacio */
-    }
-
-    .grid-item-left p, .grid-item-right p {
-        font-size: 1rem; /* Ajusta aún más el tamaño de fuente */
-    }
-}
